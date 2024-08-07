@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        h1 {
+            background-color: black;
+            color:whitesmoke;
+        }
+        button{
+            background-color: black;
+            color: aliceblue;
+            padding: 15px;
+        }
+    </style>
+    <title>Estoqui</title>
+</head>
+<body>
+    <h1>ESTOQUE</h1>
+    <h2>Informe o produto que sera vendido ou armazenado no estoque:</h2>
+ <h3>Selecione o produto:
+    <select name="produto" id="produto">
+        <option value="selecione">Selecione...</option>
+        <option value="camiseta">Camiseta</option>
+        <option value="boton">Boton</option>
+        <option value="copo">Copo térmico</option>
+        <option value="chaveiro">Chaveiro</option>
+    </select>
+ </h3>
+ 
+ <button onclick="vender()">Vender</button>
+ <button onclick="armazenar()">Armazenar</button>
+ <p><label id="resultado"></label></p>
+
+ <script>
+    //Declarando a variavel para realizar a contagem
+       var camiseta = 0
+       var boton = 0
+       var copo = 0
+       var chaveiro = 0
+    
+    function vender(){
+        var saida = ''
+
+        var escolha = document.getElementById('produto')
+        var selecao = escolha.value 
+
+        if(selecao == 'camiseta'){
+            camiseta = camiseta - 1
+            alert('Camiseta vendida com sucesso!!')
+        }
+        else if (selecao == 'boton'){
+            boton = boton - 1
+            alert('Boton vendido com sucesso!!')
+        }
+        else if (selecao == 'copo'){
+            copo = copo - 1
+            alert('!Copo vendido com sucesso!!') 
+        }
+        else {
+            chaveiro = chaveiro - 1
+            alert('Chaveiro vendido com sucesso!!')
+        }
+        saida = `Camiseta: ${camiseta} Boton: ${boton} Copo térmico: ${copo} Chaveiro: ${chaveiro}`
+        document.getElementById('resultado').innerText = saida
+
+    }   
+
+    function armazenar(){
+        var saida = ''
+
+        var escolha = document.getElementById('produto')
+        var selecao = escolha.value 
+
+        if(selecao == 'camiseta'){
+            camiseta = camiseta + 1
+            alert('Camiseta armazenada com sucesso!!')
+        }
+        else if (selecao == 'boton'){
+            boton = boton + 1
+            alert('Boton armazenado com sucesso!!')
+        }
+        else if (selecao == 'copo'){
+            copo = copo + 1
+            alert('!Copo armazenado com sucesso!!') 
+        }
+        else {
+            chaveiro = chaveiro + 1
+            alert('Chaveiro armazenado com sucesso!!')
+        }
+        saida = `Camiseta: ${camiseta} Boton: ${boton} Copo térmico: ${copo} Chaveiro: ${chaveiro}`
+        document.getElementById('resultado').innerText = saida
+    }
+
+ </script>
+
+
+
+
+
+</body>
+</html>
